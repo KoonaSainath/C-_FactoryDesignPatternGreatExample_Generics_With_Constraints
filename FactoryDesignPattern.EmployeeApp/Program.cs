@@ -75,12 +75,26 @@ public class Program{
                 break;
             default:
                 employee = null;
+                break;
         }
         employee.Id = id;
         employee.Name = name;
         return employee;
     }
     public static void Main(string[] args){
-        
+        IEmployee softwareEngineer1 = CreateEmployeeInstance(Employee.SoftwareEngineer, 1, "Ben");
+        IEmployee softwareEngineer2 = CreateEmployeeInstance(Employee.SoftwareEngineer, 2, "Jimmy");
+        IEmployee businessAnalyst1 = CreateEmployeeInstance(Employee.BusinessAnalyst, 3, "Rob");
+        IEmployee businessAnalyst2 = CreateEmployeeInstance(Employee.BusinessAnalyst, 4, "Mike");
+        IEmployee manager1 = CreateEmployeeInstance(Employee.Manager, 5, "Jack");
+        IEmployee manager2 = CreateEmployeeInstance(Employee.Manager, 6, "Kim");
+
+        System.Console.WriteLine($"Software Engineer-1: {softwareEngineer1.Id} - {softwareEngineer1.Name}");
+        System.Console.WriteLine($"Software Engineer-2: {softwareEngineer2.Id} - {softwareEngineer2.Name}");
+        System.Console.WriteLine($"Business Analyst-1: {businessAnalyst1.Id} - {businessAnalyst1.Name}");
+        System.Console.WriteLine($"Business Analyst-2: {businessAnalyst2.Id} - {businessAnalyst2.Name}");
+        System.Console.WriteLine($"Manager-1: {manager1.Id} - {manager1.Name}");
+        System.Console.WriteLine($"Manager-2: {manager2.Id} - {manager2.Name}");
+
     }
 }
